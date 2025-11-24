@@ -4,8 +4,177 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>喫茶 なかクリ</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600&family=Noto+Serif+JP:wght@600&display=swap" rel="stylesheet">
+
+  <!-- CSSを直書き -->
+  <style>
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background: url('https://www.transparenttextures.com/patterns/wood-pattern.png') repeat;
+      background-color: #fdfcf9; /* アイボリーで柔らかさをプラス */
+      color: #3a3a3a;
+      line-height: 1.8;
+    }
+
+    /* ヘッダー */
+    .header {
+      background-color: rgba(255, 255, 255, 0.9);
+      border-bottom: 3px solid #d8c3a5;
+      backdrop-filter: blur(4px);
+    }
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+    }
+
+    /* ロゴ */
+    .logo {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.8rem;
+      color: #5c4033; /* 木のブラウン */
+    }
+
+    /* ナビゲーション */
+    .nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      margin: 0;
+      padding: 0;
+    }
+    .nav ul li a {
+      color: #5c4033;
+      font-weight: 600;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      transition: background 0.3s;
+      text-decoration: none;
+    }
+    .nav ul li a:hover {
+      background-color: #e6ddc6;
+    }
+
+    /* ヒーロー */
+    .hero {
+      position: relative;
+      text-align: center;
+      color: #fff;
+    }
+    .hero-bg {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      filter: brightness(70%) contrast(95%);
+    }
+    .hero-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .hero-content h2 {
+      font-size: 1.6rem;
+      background: rgba(92, 64, 51, 0.6);
+      padding: 1rem;
+      border-radius: 12px;
+    }
+    .btn-primary, .btn-outline {
+      display: inline-block;
+      margin: 0.5rem;
+      padding: 0.8rem 1.6rem;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .btn-primary {
+      background-color: #5c4033;
+      color: #fff;
+    }
+    .btn-primary:hover {
+      background-color: #7a5744;
+    }
+    .btn-outline {
+      border: 2px solid #5c4033;
+      color: #5c4033;
+    }
+    .btn-outline:hover {
+      background-color: #5c4033;
+      color: #fff;
+    }
+
+    /* ギャラリー */
+    .gallery {
+      text-align: center;
+      padding: 2rem;
+    }
+    .gallery-cards {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .gallery-cards .card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      overflow: hidden;
+      width: 200px;
+    }
+    .gallery-cards img {
+      width: 100%;
+      border-bottom: 2px solid #d8c3a5;
+    }
+
+    /* メニュー */
+    .menu {
+      padding: 2rem;
+      text-align: center;
+    }
+    .menu-grid {
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .menu-block {
+      background: rgba(255, 255, 255, 0.85);
+      border: 2px solid #d8c3a5;
+      border-radius: 12px;
+      padding: 1rem;
+      width: 250px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+    .menu-block h4 {
+      font-family: 'Noto Serif JP', serif;
+      color: #5c4033;
+    }
+
+    /* アクセス */
+    .access {
+      padding: 2rem;
+      text-align: center;
+    }
+    .access-grid {
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .access-info {
+      font-size: 1rem;
+      color: #3a3a3a;
+    }
+
+    /* フッター */
+    .footer {
+      background-color: rgba(92, 64, 51, 0.9);
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+    }
+  </style>
 </head>
 <body>
 
@@ -64,54 +233,4 @@
 
   <!-- メニュー -->
   <section id="menu" class="menu">
-    <h3>メニュー</h3>
-    <div class="menu-grid">
-      <div class="menu-block">
-        <h4>ドリンク</h4>
-        <ul>
-          <li>ブレンドコーヒー <span>¥500</span></li>
-          <li>カフェオレ <span>¥550</span></li>
-          <li>アイスコーヒー <span>¥500</span></li>
-          <li>レモンスカッシュ <span>¥600</span></li>
-        </ul>
-      </div>
-      <div class="menu-block">
-        <h4>お食事</h4>
-        <ul>
-          <li>ナポリタン <span>¥850</span></li>
-          <li>オムライス <span>¥950</span></li>
-          <li>サンドイッチセット <span>¥1,100</span></li>
-        </ul>
-      </div>
-      <div class="menu-block">
-        <h4>デザート</h4>
-        <ul>
-          <li>自家製プリン <span>¥450</span></li>
-          <li>チーズケーキ <span>¥500</span></li>
-          <li>ホットケーキ <span>¥600</span></li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- アクセス -->
-  <section id="access" class="access">
-    <h3>店舗情報・アクセス</h3>
-    <div class="access-grid">
-      <div class="access-info">
-        <p>〒663-8243<br>兵庫県西宮市津門大箇町3-5 3F<br>阪神国道駅 徒歩1分</p>
-        <p>営業時間：9:30〜13:00／15:00〜20:00<br>休業日：日曜・祝日</p>
-      </div>
-      <div class="access-map">
-        <img src="https://via.placeholder.com/400x250?text=Google+Map+Placeholder" alt="地図">
-      </div>
-    </div>
-  </section>
-
-  <!-- フッター -->
-  <footer class="footer">
-    <p>© 2025 喫茶 なかクリ. All rights reserved.</p>
-  </footer>
-
-</body>
-</html>
+  
